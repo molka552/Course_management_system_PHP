@@ -12,18 +12,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $stmt->fetch();
 
     // Check if user exists and password is correct
-   // if ($user && password_verify($password, $user['password'])) {
-    if ($user && $password===$user['password']) {
+    if ($user && $password === $user['password']) {
         // Set session variables
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
         $_SESSION['role'] = $user['role']; // Store role (admin/student)
 
-        // Redirect to the appropriate page based on the role
+        // Redirect based on role
         if ($user['role'] == 'admin') {
             header("Location: ../admin_side/admin_dashboard.php"); // Admin dashboard
         } else {
-            header("Location: ../student_side/student_dashboard.php"); // Student dashboard
+            // Pass the course_id and student_id to registration page
+            $course_id = $_GET['course_id']; // Make sure the course_id is in the query string
+            $student_id = $user['user_id']; // Assuming the student_id is the same as user_id
+            header("Location: ../student_side/registration.php?course_id=" . urlencode($course_id) . "&student_id=" . urlencode($student_id)); // Add course_id and student_id here
         }
         exit;
     } else {
@@ -31,6 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 

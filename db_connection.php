@@ -3,7 +3,7 @@
 $host = '127.0.0.1';  // Hostname of your MySQL server
 $username = 'root';   // Your MySQL username
 $password = '';       // Your MySQL password
-$database = 'course_management_system'; // Database name
+$database = 'course_managemet_system_DB'; // Database name
 
 // Create a new PDO instance for database connection
 try {

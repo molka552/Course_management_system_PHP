@@ -1,8 +1,8 @@
 <?php
 // Include database connection
-include 'db_connect.php';
+require_once('../db_connection.php');
 
 // Fetch courses from the database
-$sql = "SELECT id, category, name, date, duration, price, image FROM courses";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM courses";
+$result = $pdo->query($sql);
 ?>

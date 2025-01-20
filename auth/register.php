@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 // Debugging: Check if db_connection.php is being included

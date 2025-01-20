@@ -49,7 +49,7 @@
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
-                  
+
                     <!-- ***** Serach Start ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
@@ -59,7 +59,7 @@
                       <!--<li class="scroll-to-section"><a href="#team">Team</a></li>
                       <li class="scroll-to-section"><a href="#events">Events</a></li>
                       <li class="scroll-to-section"><a href="#contact">Register Now!</a></li>-->
-                  </ul>   
+                  </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -96,7 +96,7 @@
       </div>
     </div>
   </div>
-  
+
 
   <div class="section about-us">
     <div class="container">
@@ -173,17 +173,19 @@
             <h2>Courses</h2>
           </div>
         </div>
-        
-        <?php
-        include('courses.php');
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="col-lg-12 col-md-6">
+          <?php
+          include('courses.php');
+
+          // Check if there are any courses
+          if ($result->rowCount() > 0) {
+              // Fetch each course
+              while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                  echo '<div class="col-lg-12 col-md-6">
             <div class="item">
               <div class="row">
                 <div class="col-lg-3">
                   <div class="image">
-                    <img src="assets/images/' . htmlspecialchars($row["image"]) . '" alt="">
+                    <img src="../admin_side/pages/' . htmlspecialchars($row["image"]) . '" alt="">
                   </div>
                 </div>
                 <div class="col-lg-9">
@@ -205,20 +207,18 @@
                       <h6>$' . htmlspecialchars($row["price"]) . '</h6>
                     </li>
                   </ul>
-
-                  <a href="registration.php?course=' . urlencode($row["name"]) . '&category=' . urlencode($row["category"]) . '&price=' . urlencode($row["price"]) . '&date=' . urlencode($row["date"]) . '&duration=' . urlencode($row["duration"]) . '">
-    <i class="fa fa-angle-right"></i>
-</a>
-
-
+<a href="../auth/login.php?course_id=' . urlencode($row["id"]) . '">
+                    <i class="fa fa-angle-right"></i>
+                  </a>
                 </div>
               </div>
-            </div> ';}}
-            else{
-                echo '<p>No courses available.</p>';
-            }
+            </div>';
+              }
+          } else {
+              echo '<p>No courses available.</p>';
+          }
+          ?>
 
-        ?>
 
   <footer>
     <div class="container">
