@@ -1,0 +1,91 @@
+
+        .body {
+            font-family: 'Poppins', sans-serif;
+            background-color: rgba(216, 212, 212, 0.34);
+            padding-top: 50px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            color: #333;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            box-shadow: none;
+            border: 1px solid #ccc;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .form-control:focus {
+            border-color: #7a6ad8;
+        }
+
+        .btn-primary {
+            background-color: #7a6ad8;
+            border-color: #7a6ad8;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #7a6ad8;
+            border-color: #7a6ad8;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+
+        .footer p {
+            font-size: 14px;
+        }
+
+        .back-to-courses {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-to-courses a {
+            color: #7a6ad8;
+            text-decoration: none;
+        }
+
+        .back-to-courses a:hover {
+            text-decoration: underline;
+        }
+
+        .alert.alert-info {
+            background-color: #d9b3ff; /* Light purple background */
+            border: 1px solid #b266ff; /* Darker purple border */
+            color: #4b0082; /* Text color (dark purple/indigo) */
+            padding: 15px; /* Padding for better spacing */
+            border-radius: 5px; /* Rounded corners */
+            font-family: Arial, sans-serif; /* Optional: Adjust font style */
+            font-size: 14px; /* Optional: Adjust font size */
+            opacity: 0.6;
+        }
+
